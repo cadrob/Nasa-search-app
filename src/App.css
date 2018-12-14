@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
 .App {
   text-align: center;
+  font-family: 'Roboto Mono', monospace;
 }
 
 .App-logo {
@@ -29,4 +31,39 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.mainHeader {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 50px;
+  color: royalblue;
+}
+.display {
+  width:50%;
+  padding:10px;
+  display:inline-block;
+  height: 80vh;
+  overflow:scroll;
+  border-radius:5px;
+  background-color: rgba(228, 228, 228, 0.76);
+}
+
+img {
+  padding:5px;
+  height: 200px;
+  width: 200px;
+  border-radius: 10%;
+}
+.searchInput {
+  height:30px;
+  width:150px;
+}
+input{
+  margin:10px;
+}
+
+button {
+  margin:10px;
+  padding:10px;
+
 }
