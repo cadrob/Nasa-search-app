@@ -14,7 +14,7 @@ class App extends Component {
 
       <Router>
        <Search path="/"/>
-       <Asset path="/asset"></Asset>
+       <Asset path="/asset/:nasa_id"></Asset>
       </Router>
 
 

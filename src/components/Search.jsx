@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import Display from './Display'
 import * as api from '../api'
 import Loader from 'react-loader-spinner';
@@ -31,8 +30,8 @@ class Search extends Component { //need to send back the displaydata
             color="blue"
             height="100"	
             width="100"
-                    /> ||
-                <Display results={this.state.results} /> }
+                /> }
+                {!this.state.isLoading && <Display results={this.state.results} /> }
                 
             </div>
         );
@@ -64,9 +63,5 @@ class Search extends Component { //need to send back the displaydata
 
 
 }
-
-Search.propTypes = {
-
-};
 
 export default Search;

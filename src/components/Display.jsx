@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from '@reach/router'
 import '../App.css'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEye } from '@fortawesome/free-solid-svg-icons'
+
 
 class Display extends Component { // we will have a router in to navigate to assets
     render() {
@@ -15,7 +14,7 @@ class Display extends Component { // we will have a router in to navigate to ass
             {results.map((result) => {
                 const {nasa_id, preview, type} = result;
             return  <Link key={nasa_id} to={`/asset/${nasa_id}`}>
-            {type === 'image' && <img src={preview}/>}
+            {type === 'image' && <img src={preview} alt={nasa_id}/>}
             {type ==='audio' && <p>{preview}</p>}
             </Link>
             }
