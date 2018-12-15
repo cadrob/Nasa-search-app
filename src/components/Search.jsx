@@ -1,67 +1,75 @@
-import React, { Component } from 'react';
-import Display from './Display'
-import * as api from '../api'
-import Loader from 'react-loader-spinner';
-import '../App'
+import React, { Component } from "react";
+import Display from "./Display";
+import * as api from "../api";
+import Loader from "react-loader-spinner";
+import "../App";
 
-class Search extends Component { //need to send back the displaydata
-    state = {
-        typeSelected: 'image',
-        searchTerm: "",
-        results: null,
-        isLoading: null
-    }
-    render() {
-        
-        return (
-            <div>
-                <form onSubmit = {this.handleSubmit}>
-                    
-                    <input className="searchInput" onChange = {this.handleChange} value={this.state.searchTerm} placeholder = "Search here..."></input>
-                    <button>Go!</button> <br/>
-                    <label htmlFor = "Images">Images</label>
-                    <input type = "radio" name ="Selection" value = "image"  onClick = {this.handleRadio}></input>
-                    <label htmlFor = "Audio">Audio</label>
-                    <input type = "radio" name ="Selection" value="audio"  onClick = {this.handleRadio}></input>
-                </form>
-                {this.state.isLoading &&
-                <Loader 
-            type="ThreeDots"
-            color="blue"
-            height="100"	
-            width="100"
-                /> }
-                {!this.state.isLoading && <Display results={this.state.results} /> }
-                
-            </div>
-        );
-    }
+class Search extends Component {
+  state = {
+    typeSelected: "image",
+    searchTerm: "",
+    results: null,
+    isLoading: null
+  };
+  render() {
+    const { typeSelected } = this.state;
 
-    handleSubmit = (event) => {
-        event.preventDefault();
-        const { searchTerm, typeSelected } = this.state;
-        const keywords = this.formatKeywords(searchTerm);
-        api.searchAll(keywords, typeSelected ).then((results) => {
-            this.setState({results})
-        });
+    return (
+      <div>
+        <form onSubmit={this.handleSubmit}>
+          <input
+            className="searchInput"
+            onChange={this.handleChange}
+            value={this.state.searchTerm}
+            placeholder="Search here..."
+          />
+          <button>Go!</button> <br />
+          <label htmlFor="Images">Images</label>
+          <input
+            type="radio"
+            name="Selection"
+            checked={typeSelected === "image"}
+            value="image"
+            onClick={this.handleRadio}
+          />
+          <label htmlFor="audio">Audio</label>
+          <input
+            id="audio"
+            type="radio"
+            name="Selection"
+            value="audio"
+            onClick={this.handleRadio}
+          />
+        </form>
+        {!this.state.results && <p>Search to get results</p>}
+        {this.state.results && <Display results={this.state.results} />}
+      </div>
+    );
+  }
+  componentDidMount() {
+    this.setState({ results: this.props.results });
+  }
 
-    }
-    formatKeywords = (keywords) => {
-        return keywords.trim().replace(/[ ,]+/g, ",")
-    }
+  handleSubmit = event => {
+    event.preventDefault();
+    const { searchTerm, typeSelected } = this.state;
+    const keywords = this.formatKeywords(searchTerm);
 
-    handleRadio = (event) => {
-       this.setState({typeSelected:event.target.value})
-    }
+    api.searchAll(keywords, typeSelected).then(results => {
+      this.setState({ results, isLoading: false });
+    });
+  };
+  formatKeywords = keywords => {
+    return keywords.trim().replace(/[ ,]+/g, ",");
+  };
 
-    handleChange = (event) => {
-        this.setState({searchTerm: event.target.value})
-    }
+  handleRadio = event => {
+    this.setState({ typeSelected: event.target.value });
+  };
 
-
-
-
-
+  handleChange = event => {
+    this.setState({ searchTerm: event.target.value });
+  };
 }
 
 export default Search;

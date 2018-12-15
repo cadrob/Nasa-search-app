@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
+@import url("https://fonts.googleapis.com/css?family=Roboto+Mono");
 .App {
   text-align: center;
-  font-family: 'Roboto Mono', monospace;
+  font-family: "Roboto Mono", monospace;
 }
 
 .App-logo {
@@ -34,36 +34,55 @@
 }
 
 .mainHeader {
-  font-family: 'Roboto Mono', monospace;
+  font-family: "Roboto Mono", monospace;
   font-size: 50px;
   color: royalblue;
 }
+
+.asset-container header {
+  font-family: "Roboto Mono", monospace;
+  font-size: 30px;
+  font-style: italic;
+}
+
+.asset-description {
+  width: 60%;
+  height: 30vh;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: scroll;
+}
+.asset-container img {
+  height: 50vh;
+  width: 500px;
+}
+
 .display {
-  width:50%;
-  padding:10px;
-  display:inline-block;
+  width: 50%;
+  padding: 10px;
+  display: inline-block;
   height: 80vh;
-  overflow:scroll;
-  border-radius:5px;
+  overflow: scroll;
+  border-radius: 5px;
   background-color: rgba(228, 228, 228, 0.76);
 }
 
 img {
-  padding:5px;
+  padding: 5px;
   height: 200px;
   width: 200px;
   border-radius: 10%;
 }
+
 .searchInput {
-  height:30px;
-  width:150px;
+  height: 30px;
+  width: 150px;
 }
-input{
-  margin:10px;
+input {
+  margin: 10px;
 }
 
 button {
-  margin:10px;
-  padding:10px;
-
+  margin: 10px;
+  padding: 10px;
 }
