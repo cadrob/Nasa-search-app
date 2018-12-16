@@ -2,11 +2,13 @@
 
 Please note - I am currently working on my graduation project at Northcoders for which I have 9 days to do it. This involves building a backend with Firebase/Express Server along with 2 front ends built in React and React Native. Time constraints are against me however I will do as much as I can within this test! Please see additional features and processes I would do/consider given more time:
 
-- Use throttle from lo dash and restrict results to perhaps 15 per scroll etc
-- Loading spinner
+- Use \_throttle from lo-dash and restrict results to perhaps 9 per scroll etc
+- Loading spinner on all components where needed, not just asset.
 - Use Cypress for testing, using stubbing for mock server etc
 - Re-design so that searched results are still available upon going "back"
 - User control on audio playback
+- Error handling for API requests and bad navigation
+- Ability to be more specific on search results (i.e Sort by year)
 
 ## Available Scripts
 
