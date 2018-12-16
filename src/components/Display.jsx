@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { Link } from "@reach/router";
 import "../App.css";
-import Loader from "react-loader-spinner";
 
 class Display extends Component {
   render() {

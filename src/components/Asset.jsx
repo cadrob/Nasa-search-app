@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 import * as api from "../api";
 import Loader from "react-loader-spinner";
 import Image from "./Image";
@@ -14,13 +13,12 @@ class Asset extends Component {
   };
   render() {
     if (this.state.isLoading) {
-      return <Loader type="ThreeDots" color="red" height="100" width="100" />;
+      return <Loader type="ThreeDots" color="blue" height="100" width="100" />;
     }
 
     // asset data
     const title = this.state.asset.data[0].title;
     const description = this.state.asset.data[0].description;
-    const test = this.state.asset.href;
     const media_type = this.state.asset.data[0].media_type;
 
     return (
@@ -49,12 +47,6 @@ class Asset extends Component {
         this.setState({ jsondata, asset, isLoading: false });
       });
   }
-
-  componentDidUpdate() {
-    //if url changes
-  }
 }
-
-Asset.propTypes = {};
 
 export default Asset;

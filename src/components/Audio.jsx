@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 import Sound from "react-sound";
 
 class Audio extends Component {
@@ -13,7 +12,5 @@ class Audio extends Component {
     );
   }
 }
-
-Audio.propTypes = {};
 
 export default Audio;

@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import "../App";
 
 const Image = props => {
@@ -12,7 +11,5 @@ const Image = props => {
     </div>
   );
 };
-
-Image.propTypes = {};
 
 export default Image;
