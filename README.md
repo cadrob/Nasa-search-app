@@ -1,6 +1,4 @@
-#Personal Note
-
-Please note - I am currently working on my graduation project at Northcoders for which I have 9 days to do it. This involves building a backend with Firebase/Express Server along with 2 front ends built in React and React Native. Time constraints are against me however I will do as much as I can within this test! Please see additional features and processes I would do/consider given more time:
+Please see additional features and processes I would do/consider given more time:
 
 - Use \_throttle from lo-dash and restrict results to perhaps 9 per scroll etc
 - Loading spinner on all components where needed, not just asset.
